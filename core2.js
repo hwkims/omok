@@ -452,10 +452,12 @@ function drawer()
 	}
 	if(winPos!=null)
 	{
-		ctx.globalAlpha=0.5;
-		ctx.fillStyle='#00ff00';
-		ctx.fillRect(cssms*winPos[0],cssms*winPos[1],cssms,cssms);
-		ctx.globalAlpha=1;
+		ctx.globalAlpha = 0.5;
+		ctx.fillStyle = '#00ff00';
+		ctx.beginPath();
+		ctx.arc(cssms * winPos[0] + cssms / 2, cssms * winPos[1] + cssms / 2, cssms / 2, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.globalAlpha = 1;
 	}
 }
 setInterval(drawer);
